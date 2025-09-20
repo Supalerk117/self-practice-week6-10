@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html&js</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            transition: background 1s ease , color 1s ease;
+        }
+        body > div{
+            padding: 10px;
+            background:linear-gradient(to top, rgb(145, 56, 111),rgb(33, 33, 33));
+            border-radius:10px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 340px;
+            gap: 6px;
+            border: 3px solid rgba(229, 144, 246, 0.724);
+            box-shadow: 4px 4px 4px rgba(114, 114, 114, 0.629);
+        }
+        #div1{
+            margin-top:10px ;
+        }
+        button{
+            padding: 10px;
+            border-radius:10px ;
+        }
+        #div1-input,#div3-input{
+            border: 1px solid rgba(62, 62, 62, 0.63);
+            border-radius: 5px;
+            font-size: 13px;
+            width: 175px;
+            padding: 8px;
+        }
+        #div2 div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        #div2-input{
+            height: 40px;
+            width: 40px;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <h1 id="title">Title</h1>
+        <form onsubmit="changeText(); return false">
+            <input type="text" id="div1-input" placeholder="Enter your title">
+            <button type="submit">click to change title</button>
+        </form>
+    </div>
+
+    
+    <div id="div2">
+        <h1 id="text-colored">This is a text</h1>
+        <div>
+            <input type="color" id="div2-input">
+            <button onclick="changeTextColor()">click to change text color</button>
+        </div>
+    </div>
+
+    <div id="div3">
+        <h1>Lottery</h1>
+        
+        <form id="div3-form">
+            <input type="number" id="div3-input" min="1" max="10" placeholder="Enter a number 1-10">
+            <button type="submit">click to random</button>
+            <p id="result"></p>
+        </form>
+        
+    </div>
+
+    <button onclick="changeTheme()">click here to change theme</button>
+
+</body>
+
+<script src="script.js"></script>
+</html>

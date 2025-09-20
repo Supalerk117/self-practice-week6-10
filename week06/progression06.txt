@@ -1,0 +1,26 @@
+วันนี้ลองฝึกการทำงานด้วยกันระหว่าง html กับ js โดยเน้นไปที่การรับ-ส่งตัวแปร,การเข้าถึงค่าต่างๆและการเรียก function ผ่าน web(html)
+
+function changeText()
+รับ input ผ่าน id จาก html มาแล้วเก็บไว้ในตัวแปรชื่อ text แล้วก็ทำให้ html รับค่า text ที่ตัวแรกเป็นตัวพิมใหญ่
+(text index ที่ 0 ที่ทำเป็นตัวพิมใหญ่และ + กับ text ที่เอาตัว index แรกออก)
+ในฝั่ง html ใช้ form ที่ wrap input และมี button ที่ type="submit" เพื่อเวลาจะส่งค่าไปให้ js กด enter ได้เลย
+ส่วน attribute ของ form ก็ใช้เป็น onsubmit="function()"; return false
+ที่ต้อง return false เพื่อป้องกันไม่ให้เวลา submit แล้ว refresh web อัตโนมัติ
+
+function changeTextColor()
+เข้าถึง color ของ id ที่จะเปลี่ยนสีและเปลี่ยนสีตาม input ที่กรอก
+โดย html จะใช้ button onclick ในการเรียก function
+
+function lottery()
+จะดึงค่าจาก input ที่มี id="div3-input" มาเก็บในตัวแปร inputNum (โดยแปลงเป็นตัวเลข) 
+แล้วสุ่มตัวเลข 1–10 เก็บใน randomNum จากนั้นตรวจสอบว่า inputNum ตรงกับ randomNum หรือไม่ ถ้าตรงก็เซ็ตข้อความว่า 
+"Congratulations you win the lottery !" พร้อมสีพื้นหลังเขียว แต่ถ้าไม่ตรงก็จะแสดงข้อความว่าแพ้พร้อมบอกเลขที่สุ่มได้และ
+เปลี่ยนพื้นหลังเป็นสีแดง ข้อความผลลัพธ์ถูกแสดงใน element ที่มี id="result" โดยใช้ innerHTML และเพิ่ม padding ให้ดูชัดเจน 
+ในฝั่ง HTML ใช้ form ที่ wrap input number กับปุ่ม submit เพื่อให้สามารถกด Enter ส่งค่าได้ โดยใน JavaScript ใช้ 
+addEventListener("submit", e.preventDefault()) เพื่อกันไม่ให้ form refresh หน้าเว็บอัตโนมัติ แล้วเรียกฟังก์ชัน lottery มาทำงานแทน
+
+function changeTheme()
+เป็น function เปลี่ยน background-color โดยใช้ onclick ในการเรียก function
+ใน function ก็จะดึงค่า สี background ปัจจุบันมาเก็บไว้ในตัวแปรก่อนแล้วก็ใช้ if/else
+ในการเช็คว่าตอนนั้นสีอะไรอยู่แล้วก็เปลี่ยนสีเอา
+เพิ่มเติมคือได้ใช้ transition ในการเปลี่ยนสี ทำให้เวลาเปลี่ยนดู smooth มากขึ้น
