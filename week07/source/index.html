@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>week07</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        align-items: center;
+        font-family: sans-serif;
+        background-color: rgb(59, 59, 59);
+      }
+      body > div {
+        background-color: rgb(230, 229, 226);
+        width: 100%;
+        max-width: 480px;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        border: 9px solid rgb(0, 0, 0);
+        border-radius: 50px;
+      }
+      form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      input {
+        padding: 8px 2px;
+      }
+      button {
+        padding: 10px;
+        background-color: rgb(166, 177, 164);
+        transition: 0.9s;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: rgb(255, 204, 76);
+        transition: 0.9s;
+      }
+      button,
+      input {
+        border-radius: 6px;
+      }
+      div > p {
+        background: linear-gradient(
+          to left,
+          rgba(253, 255, 151, 0.842),
+          rgba(199, 254, 184, 0.787)
+        );
+        padding: 20px;
+        border: 6px solid rgb(0, 0, 0);
+        border-radius: 30px;
+      }
+      #productInput {
+        width: 100%;
+        max-width: 100px;
+      }
+      #products {
+        max-height: 400px;
+        overflow-y: scroll;
+      }
+      #postProductForm{
+        flex-direction: column;
+        align-items: start;
+        gap: 6px;
+        padding: 10px;
+      }
+      #postProductForm button{
+        align-self: center;
+      }
+      label{
+        font-size: 20px;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Random Products Name</h1>
+      <h3>
+        API from
+        <a href="https://dummyjson.com/products" target="_blank">dummyjson</a>
+      </h3>
+      <button onclick="randomProductsName()">get</button>
+      <p id="result">This is data area</p>
+    </div>
+
+    <div>
+      <h1>Get All Products</h1>
+      <h3>
+        API from
+        <a href="https://jsonplaceholder.typicode.com/posts" target="_blank"
+          >jsonplaceholder</a
+        >
+      </h3>
+      <button onclick="getAllProducts()">get</button>
+      <p id="products">This is data area</p>
+    </div>
+
+    <div>
+      <h1>Get One Product</h1>
+      <h3>
+        API from
+        <a href="https://jsonplaceholder.typicode.com/posts" target="_blank"
+          >jsonplaceholder</a
+        >
+      </h3>
+      <form id="getProductForm">
+        <input
+          type="number"
+          min="1"
+          id="productInput"
+          placeholder="Enter your ID"
+        />
+        <button type="submit">get</button>
+      </form>
+      <p id="product">This is data area</p>
+    </div>
+
+    <div>
+      <h1>Post Product</h1>
+      <h3>
+        API from
+        <a href="https://jsonplaceholder.typicode.com/posts" target="_blank"
+          >jsonplaceholder</a
+        >
+      </h3>
+      <form id="postProductForm">
+
+        <label for="postUserId">UserID</label>
+        <input type="text" placeholder="Enter your UserID" id="postUserId">
+
+        <label for="postTitle">Product Name</label>
+        <input type="text" placeholder="Enter your Product Name" id="postTitle"/>
+
+        <label for="postBody">Product details</label>
+        <input type="text" placeholder="Enter your Product Details" id="postBody">
+
+        <button type="submit">Post</button>
+      </form>
+      <p id="postRes"> Response massage </p>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
