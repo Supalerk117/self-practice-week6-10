@@ -66,13 +66,16 @@ const postProductForm = ById("postProductForm")
 const postRes = ById("postRes")
 postProductForm.addEventListener("submit", function (e) {
   e.preventDefault();
-  postProductByTitle();
+  postProduct();
 });
 
-async function postProductByTitle(){
+
+
+async function postProduct(){
 const postUserId = ById("postUserId").value
 const postTitle = ById("postTitle").value
 const postBody = ById("postBody").value
+
   if (!postUserId || !postTitle || !postBody){
     alert("Please fill all fields"); return;
   }
@@ -97,7 +100,11 @@ const postBody = ById("postBody").value
      id: <b>${data.id}</b><br>
      title: <b>${data.title}</b><br>
      body: <b>${data.body}</b>`
-  }
+
+    ById("postUserId").value = "";
+    ById("postTitle").value = "";
+    ById("postBody").value = "";
+    }
   catch (err){
     console.error(`error massge. : ${err}`);
     postRes.innerHTML = `<b>Error posting product !!!</b> ❤️‍🩹`
