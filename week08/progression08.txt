@@ -1,0 +1,28 @@
+วันนี้ทำแบบฝึกหัดที่อาจารย์ให้มา เป็นโจทย์ CRUD
+
+function addQuote (create)
+- push qoute ใหม่ เข้าไปใน array qoutes
+- ทุกครั้งที่ function นี้ทำงานจะ +1 ค่า nextID เสมอเพื่อนับ id
+- log 'Add quote successfully !' เพื่อเป็น massage ให้รู้ว่าสร้างสำเร็จ
+
+function deleteQuote (delete)
+- เช็คว่า param id ที่รับมาเป็นค่าว่างไหม ถ้าใช่ log 'Please specify id that you need to delete' และหยุดการทำงาน function
+- เช็คว่า param id เป็น int ไหม โดยประกาสตัวแปร numID = parseInt(id) เพื่อทำให้เป็นค่า int ซึ่งถ้ามันเป็น type แล้วใช้ parseInt 
+ค่านั้นจะเป็น NaN ซึ่งเป็น falsy แล้วก็เช็คเอาว่า numID เป็น NaN ไหม ถ้าใช่ log 'Please enter only number' และหยุดการทำงาน function
+- เช็คว่าใน array qoutes มี id นั้นอยู่จริงไหมโดยใช้ find เพื่อให้ return เป็นค่า boolean แล้วค่าโดยใช้นิเสธ​เพื่อให้ if ทำงานเมื่อไม่มี id นั้น
+อยู่ใน array qoutes ซึ่งถ้าไม่มี log 'id:${numid} does not exist' และหยุดการทำงาน function
+- เมื่อเงื่อนไชทั้งหมดเป็นจริงแล้วก็หา index ของ object ที่มี id เดียวกับ param id
+- เสร็จแล้วก็ splice index ออก
+- log 'id:${id} Deleted successfully !' เพื่อเป็น massage ให้รู้ว่าลบ id นั้นๆสำเร็จ
+
+function updateQuote (update)
+- validation เหมือน function deleteQuote หมดเลยต่างแค่ข้อความที่ log
+- เช็คเพิ่มว่า param content กับ author ที่รับมาเป็นค่าว่างไหม ถ้าใช่ log 'Please fill in all required fields' และหยุดการทำงาน function
+- เช็คหาค่า index เหมือน function deleteQuote
+- reassigned ค่่า content กับ author นั้นให้เป็นค่าเดียวกับ param ที่รับมา
+- log 'id:${id} Updated successfully !' เพื่อเป็น massage ให้รู้ว่าอัพเดต id นั้นๆสำเร็จ
+
+function getAllQuotes (Read)
+- return array qoutes
+
+ทำ dom ให้ดึงไปใช้หน้าเว็บได้ โดยเรียก function getAllQuotes แล้วใช้ JSON.stringify ครอบเพ่ือให้สามารถแสดงบน web ได้
