@@ -1,0 +1,23 @@
+วันนี้ทำการบ้านที่อาจาารย์ให้มา
+
+renderQuote()
+ก่อนอื่นเราต้อง import function ใน quote.js มาก่อนเพื่อที่เราจะได้ใช้ getAllQuotes()
+เริ่มต้น function เราจะเคลีย child ที่อยู่ใน quoteList ก่อนเสร็จแล้วเรียก getAllQuotes() มาเก็บไว้ใน
+ตัวแปรนั้นที่เป๋น array เพื่อที่จะได้เข้าถึง ทุก quote จาก data ที่มีแล้วก็ forEach array นั้นเพื่อเข้าไปสร้าง
+element ของตัวแปรทุกตัวแล้วก็ใส่ข้อความและ appendChild เข้าไปใน quoteList เพื่อแสดงบนเว็บ
+
+practice ข้อ 1
+ฝึก validate ค่าด้วย addEventlistener เร่ิมจาก query dom id ทั้งหมดรวมถึง input ทั้งหมดใน form
+แล้วใช้ addEventlistener เพื่อคอยจับอีเว้น โดยผมใช้เป็น type 'click' เมื่อ click จะเช็คว่ามีตัวไหนใน 
+array inputs ไหมที่เป็นค่าว่าง ถ้ามีก็ preventDefault() และ display เพื่อบอก error บนหน้าเว็บ
+รวมถึงกำหนดสี display ให้เป้นสีแดงและหยุดการทำงานโค้ดท่ีเหลือ ต่อมาเช็คว่าว่าใน input password กับ
+confirmpassword เป็นค่าเดียวกันไหม ถ้าไม่ก็ ขึ้น error บอก ตัวหนังสือสีแดงและหยุดการทำงานโค้ดที่เหลือ
+แต่ถ้าไม่เช้าเงื่อนไขไหนเลยแสดงว่า validate ผ่านก็แสดงว่า data complete เป็นสีเขียว 
+และเคลีย value input ทุกตัวโดยการ forEach ใน Array inputs ทั้งหมดใน form
+
+practice ข้อ 2
+ฝึกใช้ addEventlistener คราวนี้เป็น type 'keydown' โดย type นี้จะทำงานทุกๆครั้งที่มีการกดแป้น keyboard
+ซึ่งต่างจาก type 'input' เพราะอันนั้นคือเอาค่าทั้งหมดที่อยู่ใน กล่อง input แต่ 'keydown' คือเอามาทีละตัว
+โดยเริ่มจากการสร้าง element p เก็บไว้ในตัวแปร p แล้วก็แสดงค่านั้น โดยใช้ e.key เพื่อเข้าถึงค่าที่ event รับมา
+(แป้น keyboard) เสร็จแล้วก็ appendChild(p) เข้าไปใน div display เพื่อแสดงผล
+แต่ทุกๆครั้งที่ addEventlistener นี้ทำงานมันจะเช็คว่า e.key มันเป็น enter ไหมถ้าใช่ก็จะเปลี่ยนสีข้อความเป็นสีน้ำเงิน
