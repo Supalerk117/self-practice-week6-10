@@ -1,10 +1,32 @@
 วันนี้ทำการบ้านที่อาจาารย์ให้มา
 
+lesson2
 renderQuote()
 ก่อนอื่นเราต้อง import function ใน quote.js มาก่อนเพื่อที่เราจะได้ใช้ getAllQuotes()
 เริ่มต้น function เราจะเคลีย child ที่อยู่ใน quoteList ก่อนเสร็จแล้วเรียก getAllQuotes() มาเก็บไว้ใน
 ตัวแปรนั้นที่เป๋น array เพื่อที่จะได้เข้าถึง ทุก quote จาก data ที่มีแล้วก็ forEach array นั้นเพื่อเข้าไปสร้าง
 element ของตัวแปรทุกตัวแล้วก็ใส่ข้อความและ appendChild เข้าไปใน quoteList เพื่อแสดงบนเว็บ
+
+lesson3
+createQuoteElement(quote)
+ฟังก์ชันนี้จะสร้าง element สำหรับ quote หนึ่งอัน โดยมี <p> สำหรับข้อความกับชื่อผู้เขียน และปุ่ม Edit / Delete 
+แล้ว return กลับมาเป็น div หนึ่งก้อนพร้อม data-id
+addQuoteToDOM(quote)
+เรียกใช้ createQuoteElement() เพื่อสร้าง quote ใหม่ แล้วเอาไป append เข้าใน quoteList เพื่อแสดงบนหน้าเว็บ
+updateQuoteInDOM(quote)
+หาว่า quote ไหนใน DOM ที่มี id ตรงกับที่อัปเดต แล้วเปลี่ยนข้อความกับชื่อผู้เขียนใน <p> ให้เป็นข้อมูลใหม่
+deleteQuoteFromDOM(id)
+หาว่า quote ไหนในหน้าเว็บที่มี id ตรงกับที่ลบ แล้วใช้ .remove() เอาออกจากหน้าเว็บ
+renderQuotes()
+เคลียร์ quote ทั้งหมดที่อยู่ใน quoteList ก่อน แล้วใช้ getAllQuotes() เพื่อดึง quotes ทั้งหมดมา จากนั้นวนลูปแต่ละอันเรียก 
+addQuoteToDOM() เพื่อแสดงผลทั้งหมด
+handleFormSubmit(e)
+กันการ reload หน้า (preventDefault()), สร้าง object quote ใหม่จากค่าที่กรอกในฟอร์ม แล้วเรียก addQuote() 
+เพื่อบันทึก จากนั้นอัปเดต DOM และเคลียร์ input
+handleListClick(e)
+ถ้ากดปุ่ม Edit หรือ Delete จะเช็ก class แล้วเรียก updateQuote() หรือ deleteQuote() ตามนั้น พร้อมอัปเดต DOM ให้ตรงกับการเปลี่ยนแปลง
+showRandomQuote()
+สุ่ม quote หนึ่งอันจาก getAllQuotes() แล้วแสดงในช่อง randomQuoteDisplay
 
 practice ข้อ 1
 ฝึก validate ค่าด้วย addEventlistener เร่ิมจาก query dom id ทั้งหมดรวมถึง input ทั้งหมดใน form
