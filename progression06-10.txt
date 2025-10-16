@@ -1,0 +1,6 @@
+โมดูลนี้ผมคิดว่าตัวเองได้พัฒนาทักษะการเขียน frontend ดีขึ้นมาก จากการทำแบบฝึกหัดของอาจารย์และหาโจทย์จาก AI 
+สิ่งที่ได้เรียนคือ การจำลองการ fetch ข้อมูลจาก backend , การ Chain หรือการใช้ .then() ,
+การใช้ async function และ await ในการรอข้อมูลหรือ synchonus , ใช้ JSON.stringify() ,
+การใช้ attribute onclick ใน HTML แล้วเรียก function ใน JS , เรื่อง DOM วิธี query , เข้าถึง value ,
+การ createElement , เข้าถึง style และ attribute ผ่าน JS , เรื่อง Event การเพ่ิม/ลบ Eventlistener ,
+type ต่างๆ เช่น click ,  keyup , input รวมถึงได้ฝึกเขียน import และ export จริงๆจากโจทย์อาจารย์ 

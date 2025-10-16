@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+      form {
+        padding: 20px;
+        background: linear-gradient(to bottom,rgb(216, 234, 247), rgb(224, 246, 234) ) ;
+        width: 100%;
+        max-width: 240px;
+        box-shadow: 3px 3px 3px rgb(105, 105, 106);
+      }
+      #save {
+        padding: 10px;
+        background:linear-gradient(to right, rgb(68, 188, 12),rgb(142, 244, 95))
+      }
+      #reset {
+        padding: 10px;
+        background:linear-gradient(to right, rgb(178, 19, 19),rgb(242, 120, 120))
+      }
+      #display{
+        padding: 8px;
+        border: 4px solid rgb(201, 201, 201) ;
+        box-shadow: 3px 3px 3px rgb(105, 105, 106);
+      }
+      button{
+        transition: 0.6s ease;
+        color: #FFFFFF;
+        box-shadow: 3px 3px 3px rgb(105, 105, 106);
+      }
+      button:hover{
+        transform:translateY(-2px);
+        scale: 1.05;
+        cursor: pointer;
+        filter: brightness(0.9);
+      }
+    </style>
+  </head>
+  <body>
+
+    <form action="">
+      <label for="bg-color">Background Color:</label>
+      <input type="color" id="bg-color"/><br /><br />
+
+      <label for="font-color">Font color:</label>
+      <input type="color" id="font-color" /><br /><br />
+
+      <label>Font Size: </label>
+      <select id="font-size">
+        <option value="small">Small</option>
+        <option value="medium" selected>Medium</option>
+        <option value="large">Large</option></select
+      ><br /><br />
+
+     <div style="display: flex;justify-content: space-between;">
+         <button type="button" id="reset">Reset Setting</button>
+         <button type="button" id="save">Save Settings</button>
+        </div>
+    </form>
+
+    <h1 id="display">EXAMPLE</h1>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
